@@ -1,0 +1,80 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Simple UI',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("TechnoHacks Task 1"),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Card(
+          elevation: 8,
+          margin: const EdgeInsets.all(20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.blue,
+                  child: Icon(
+                    Icons.person,
+                    size: 60,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  "Welcome!",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  "This is a simple Flutter UI created for the TechnoHacks App Development Internship.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text("Get Started"),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
